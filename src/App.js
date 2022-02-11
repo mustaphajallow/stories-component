@@ -1,24 +1,71 @@
 
 import './App.css';
-  
+import React from 'react'
+import like from './images/he.png';
+import share from './images/ch.png';
+import comment from './images/shopping.png';
+// import shopping from './images/shopping.png';
+import send from './images/send.png';
+import users from "./users-data"
+// import profile from './images/.png';
+ 
+ 
 
 
 
-function App() {
+export class  App extends React.Component {
+render(){
+
   return (
     <div className="App">
+    <div className="stories-component">
+     {users.map(( users,i) =>{
+       return(
+             
+       
+        <div className="img-container" key={i} >
+          <img src={users.videourl} alt="" className="slider" />  
+          <div className="social-media">
+            <a href="#" className="icon">
+              <img src={like} alt="" className='img'/>
+              <p className="counts">{users.likes}</p>
+            </a>
+            
+            <a href="#" className="icon">
+              <img src={comment} alt="" className='img'/>
+              <p className="counts">{users.purchases}</p>
+            </a>
+              
+            <a href="#" className="icon">
+              <img src={share} alt="" className='img'/>
+              <p className="counts">{users.message}</p>
+            </a>
+
+            <a href="#" className="icon">
+            <img src={send} alt="" className='img'/>
+            <p className="counts">{users.share}</p>
+          </a>
+
+          </div>
+          <div className="info-container">
+             <div className="profile">
+               <img src={users.profileimg} alt="" className="img-profile" />
+               <p className="name-follow">{users.name}</p>
+             </div>
+             <p className='link-more'>{users.link}</p>
+          </div>
+        </div>  
+
+
+
      
-        <div className="stories-component">
-          <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmF0dXJlJTIwc2VhJTIwNTAwcHglMjBieSUyMDUwMHB4fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJlJTIwc2VhJTIwNTAwcHglMjBieSUyMDUwMHB4fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1446071103084-c257b5f70672?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZSUyMHNlYSUyMDUwMHB4JTIwYnklMjA1MDBweHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG5hdHVyZSUyMHNlYSUyMDUwMHB4JTIwYnklMjA1MDBweHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bmF0dXJlJTIwc2VhJTIwNTAwcHglMjBieSUyMDUwMHB4fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG5hdHVyZSUyMHNlYSUyMDUwMHB4JTIwYnklMjA1MDBweHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-          <img src="https://images.unsplash.com/photo-1446071103084-c257b5f70672?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZSUyMHNlYSUyMDUwMHB4JTIwYnklMjA1MDBweHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="" className="slider" />
-        </div>
+       )
+     })}
+
+        </div>  
     </div>
   );
-}
+}}
 
 export default App;
+       

@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react'
+import React, { useRef } from 'react'
 import like from './images/he.png';
 import share from './images/ch.png';
 import comment from './images/shopping.png';
@@ -8,22 +8,38 @@ import comment from './images/shopping.png';
 import send from './images/send.png';
 import users from "./users-data"
 // import profile from './images/.png';
- 
+ import Stories from './stories';
  
 
 
 
 export class  App extends React.Component {
+   
+   
+
 render(){
+      // if(this.users.videourl.length > 1){
+
+      //   return <video src=""></video>
+      // }else{
+      //   return <img src="" alt="" />
+      // }
+    
 
   return (
     <div className="App">
     <div className="stories-component">
+
+      
      {users.map(( users,i) =>{
+         
        return(
              
        
         <div className="img-container" key={i} >
+           
+         
+           <Stories users={users}></Stories>
           <img src={users.videourl} alt="" className="slider" />  
           <div className="social-media">
             <a href="#" className="icon">
